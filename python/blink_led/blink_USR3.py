@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 --------------------------------------------------------------------------
-Simple Calculator
+Blink USR3 LED, 5Hz
 --------------------------------------------------------------------------
 License:   
 Copyright 2020 Nicolas Escobar
@@ -33,110 +33,42 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------
 
-Simple calculator that will 
-  - Take in two numbers from the user
-  - Take in an operator from the user
-  - Perform the mathematical operation and provide the number to the user
-  - Repeat
-
-Operations:
-  - addition
-  - subtraction
-  - multiplication
-  - division
-  - exponentiation
-  - modulo
-  - left/right binary shift
-
-Error conditions:
-  - Invalid operator --> Program should ask for new input
-  - Invalid number   --> Program should ask for new input
-  - Overflow error --> Program should ask for new input
+Blinks the USR3 LED of the PocketBeagle at 5 Hz.
 
 --------------------------------------------------------------------------
 """
-import operator
-
-#Compatability with Python 2
-try:
-    input = raw_input
-except NameError:
-    pass
+import Adafruit_BBIO.GPIO as GPIO
+import time
+import keyboard
 
 # ------------------------------------------------------------------------
 # Global variables
 # ------------------------------------------------------------------------
-possOp = {
-    "+": operator.add,
-    "-": operator.sub,
-    "*": operator.mul,
-    "/": operator.truediv,
-    "^": operator.pow,
-    "%": operator.mod,
-    ">>": operator.rshift,
-    "<<": operator.lshift
-}
 
 # ------------------------------------------------------------------------
 # Functions
 # ------------------------------------------------------------------------
-def calc(ans):
-    #accept inputs
-    num1 = input("First Number:   ")
-    opStr = input("Operator:      ")
-    num2 = input("Second Number:  ")
-    print("------------------------------")
-    
-    #data validation
-    op = possOp.get(opStr,)
-    if op == None:
-        print("Please choose a valid operator. Options are:")
-        print("+, -, *, /, ^, %, >>, <<\n")
-        return ans
-    
-    #there's probably a good way to repeat this with a list/loop but it's only 2 numbers    
-    if num1 == "ans": #check for answer
-        num1 = ans
-    try:
-        num1 = float(num1) #convert to float
-    except:
-        print("Please input a number or 'ans' for the previous answer.\n") #NaN error
-        return ans
-    if opStr in [">>", "<<"]: #shift operators need integers, truncation is fine
-        num1 = int(num1)
-        
-    if num2 == "ans":
-        num2 = ans
-    try:
-        num2 = float(num2)
-    except:
-        print("Please input a number or 'ans' for the previous answer.\n")
-        return ans
-    if opStr in [">>", "<<"]:
-        num2 = int(num2)
-
-
-    #computation
-    try:
-        ans = op(num1,num2)
-        dispAns = str(ans)
-        print("Answer:        " + dispAns + "\n")
-    except OverflowError:
-        print("Overflow Error. Max float value 1.798e+308.\n")
-    return ans
 
 # ------------------------------------------------------------------------
 # Main script
 # ------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    #initialize variables
-    ans = 0
-    
-    #calculator loop
+    freq = 5 #Hz
+    GPIO.setup("USR3", GPIO.OUT)
     while True:
-        ans = calc(ans)
-        
+        try:
+            if keyboard.is_pressed("x"):
+                print("X pressed!")
+                break
+        except:
+            break
+        GPIO.output("USR3", GPIO.HIGH)
+        time.sleep(0.5/freq)
+        GPIO.output("USR3", GPIO.LOW)
+        time.sleep(0.5/freq)
+    #turn light off before stopping
+    GPIO.output("USR3", GPIO.LOW)
     
     
     
