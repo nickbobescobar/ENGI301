@@ -50,7 +50,7 @@ import keyboard
 # ------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------
-# Main script
+# Main scriptgit
 # ------------------------------------------------------------------------
 
 if __name__ == "__main__":
@@ -66,10 +66,10 @@ if __name__ == "__main__":
         GPIO.output("USR3", GPIO.HIGH)
         time.sleep(0.5/freq)
         GPIO.output("USR3", GPIO.LOW)
-        time.sleep(0.5/freq)
+        time.sleep(0.5/freq GPIO.LOW
+    #turtime.sleep(0.5/freq)
+        
     #turn light off before stopping
     GPIO.output("USR3", GPIO.LOW)
-    
-    
     
     
