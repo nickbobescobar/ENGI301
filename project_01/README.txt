@@ -33,6 +33,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **************************************************************************
 OPERATING
 **************************************************************************
+---HOW TO RUN---
+python3 boil_buddy.py
+
 ---boil_buddy.py---
 Main script.
 Dependencies: piezo.py, sms.py, boiltest2.csv*, fake_devs.csv*
