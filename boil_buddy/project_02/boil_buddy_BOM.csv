@@ -1,0 +1,19 @@
+Designator,Manufacturer,Quantity,Description,Datasheet
+"330? Resistor, 0402",,2,Basic SMD resistors,
+"470? Resistor, 0402",,2,Basic SMD resistors,
+"2k? Resistor, 0402",,1,Basic SMD resistors,
+"10k? Resistor, 0402",,1,Basic SMD resistors,
+"1M? Resistor, 0402",,1,Basic SMD resistors,
+"0.1uF Capacitor, 0402",,1,Basic SMD ceramic capacitors,
+"4.7uF Capacitor, 0603",,2,Basic SMD ceramic capacitors,
+4x10k? Resistor Network,,2,Basic SMD resistors,
+PET27_NRE,TIMESETL,1,27mm Piezoelectric Sensor Disc,https://www.amazon.com/dp/B077YJ3H6R
+MCP73831,Microchip,1,"Single Cell, Li-Ion/Li-Polymer Charge Management Controller",https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-Sheet-DS20001984H.pdf
+MICROSD,,1,MicroSD card slot,
+2PIN_NRE,JST Sales America,1,"SHR-02V-S 2 Pin connector, used for battery",http://www.jst-mfg.com/product/pdf/eng/eSH.pdf
+OSD3358-512M-BSM,Octavo Systems,1,Octavo OSD3358 Microprocessor,https://octavosystems.com/docs/osd335x-sm-datasheet/
+GWF-3M08_NRE,ACME Systems,1,WIFI-2 over USB Module,https://www.acmesystems.it/www/WIFI-2/GWF-3M08-Datasheet.pdf
+5501-1LED,E-Switch,1,PUSHBUTTON SERIES 5500 SWITCHES 1 LED,https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/24/5500.pdf
+HLMP-6000,Broadcom,1,Hole-mounted LED,https://docs.broadcom.com/doc/AV02-1496EN
+10118192-0001LF,Amphenol ICC,1,Micro USB Type B Complete Surface Mount (SMT) no guide holes,https://cdn.amphenol-icc.com/media/wysiwyg/files/documentation/datasheet/inputoutput/io_usb_micro.pdf
+HPL402323-2C-190mAh,Hypercell,1,Li-ion Polymer Battery 190mAh,https://download.mikroe.com/documents/datasheets/HPL402323-2C-190mAh.pdf
